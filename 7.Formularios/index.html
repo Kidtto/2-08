@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="dataForm" method="post" action="./backend/receiver.php">
+        <fieldset><legend>Datos personales:</legend>
+         <label for="name">Nombre:</label>
+        <input type="text"
+        id="name"
+        name="Nombre"
+        placeholder="Introduce tu nombre"
+        minlength="3"
+        maxlength="50"
+        title="Introduce al menos 3 carácteres y máximo 50"
+        tabindex="0"
+        autofocus ="true"
+        autocomplete="off"
+        required> <br><br> <!--mix y max length son solo para letras, autofocus es la línea que desaparece-->
+    <select id="typeDocument" name="typeDocument">
+        <option value="nada" select="selected">Seleccione un tipo de documento</option>
+        <option value="cc">Cédula de ciudadanía</option>
+        <option value="ti">Tarjeta de identidad</option>
+        <option value="ce">Cédula de extranjería</option>
+    </select><br>
+        <label for="document">No documento:</label>
+        <input type="number" id="document" name="document" placeholder="Introduce tu documento de identidad" min="2" max="99" tabindex="1">  
+        <label for="estadocivil">Estado civil:</label> 
+        <input type="radio" name="eCivil" id="eCivil" value="soltero">Soltero(a)
+        <input type="radio" name="eCivil" id="eCivil" value="casado">Casado(a)
+        <input type="radio" name="eCivil" id="eCivil" value="divorciado">Divorciado(a)
+        <input type="radio" name="eCivil" id="eCivil" value="soltero">Viudo(a)
+        </fieldset>
+        <!--Radio buton redondos y solo se puede seleccionar uno, check box cuadrados y se pueden elegir varios-->
+        <fieldset><legend>Información de estudio y otros:</legend>
+            <laber for="colores">Color favorito:</laber>
+            <input type="color" id="colores">
+            <label for="dateInsc">Fecha de inscripción</label>
+            <input type="date" id="dateInsc" name="dateInsc">
+            <label for="documentFile">Cargue los documentos de requisitos:</label>
+            <input type="file" id="documentFile" name="documentFile">
+        </fieldset>
+        <hr>
+        <laber for="lenguajes">Lenguajes de programación:</laber>
+        <select id="lenguajes" name="lenguajes">
+            <optgroup label="lenguajes Tipados">
+                <option value="java"> Java
+                <option value="cSharp"> C#
+                <option value="c"> C++
+            </optgroup>
+            <optgroup label="lenguajes No Tipados">
+                <option value="python"> Python
+                <option value="js"> JavaScript
+            </optgroup>
+        </select><br>
+        <label for="acepta">¿Acepta términos y condiciones?</label>
+        <input type="checkbox" id="terminos">
+        <input type="submit" value="Enviar"> <!--Php-->
+        <button id="validar">Validar</button> <!--Js-->
+    </form>
+    <script src="./script/main.js"></script>
+</body>
+</html>
